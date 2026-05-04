@@ -1,12 +1,31 @@
-// SWITCH
 function showRegister(){
     loginCard.classList.add("hidden");
     registerCard.classList.remove("hidden");
+
+    clearInputs();
 }
 
 function showLogin(){
     registerCard.classList.add("hidden");
     loginCard.classList.remove("hidden");
+
+    clearInputs();
+}
+
+// CLEAR ALL INPUTS
+function clearInputs(){
+    loginEmail.value = "";
+    loginPass.value = "";
+
+    regEmail.value = "";
+    regPass.value = "";
+    regPass2.value = "";
+
+    document.getElementById("agree").checked = false;
+
+    if (typeof inputCode !== "undefined") {
+        inputCode.value = "";
+    }
 }
 
 // TERMS
@@ -44,6 +63,8 @@ function register(){
     localStorage.setItem("userPass", pass);
 
     alert("Account created!");
+
+    clearInputs(); // AUTO CLEAR
     showLogin();
 }
 
@@ -54,6 +75,8 @@ function login(){
 
     if(email === localStorage.getItem("userEmail") &&
        pass === localStorage.getItem("userPass")){
+        
+        clearInputs(); // AUTO CLEAR
         showCode();
     } else {
         alert("Invalid login!");
@@ -76,4 +99,6 @@ function showCode(){
 function logout(){
     codeCard.classList.add("hidden");
     loginCard.classList.remove("hidden");
+
+    clearInputs();
 }
