@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>ANO TARA SERVICES</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- LOGIN -->
+    <div class="card" id="loginCard">
+        <h2>ANO TARA SERVICES</h2>
+        <h3>Login</h3>
+
+        <input type="email" id="loginEmail" placeholder="Email">
+        <input type="password" id="loginPass" placeholder="Password">
+
+        <button onclick="login()">Login</button>
+
+        <p>Walang account?</p>
+        <button class="link-btn" onclick="showRegister()">Register</button>
+    </div>
+
+    <!-- REGISTER -->
+    <div class="card hidden" id="registerCard">
+        <h2>Create Account</h2>
+
+        <input type="email" id="regEmail" placeholder="Email">
+        <input type="password" id="regPass" placeholder="Password">
+        <input type="password" id="regPass2" placeholder="Re-enter Password">
+
+        <!-- TERMS (FIXED ALIGNMENT) -->
+        <div class="terms-row">
+            <input type="checkbox" id="agree">
+
+            <span>I agree to</span>
+
+            <button class="link-btn" onclick="showTerms()">
+                Terms & Conditions
+            </button>
+        </div>
+
+        <button onclick="register()">Sign Up</button>
+
+        <p>May account na?</p>
+        <button class="link-btn" onclick="showLogin()">Back to Login</button>
+    </div>
+
+    <!-- CODE -->
+    <div class="card hidden" id="codeCard">
+        <h2>Your Code</h2>
+        <p>Ito ang iyong number:</p>
+
+        <div class="code-box" id="userCode">000000</div>
+
+        <button onclick="logout()">Logout</button>
+    </div>
+
+</div>
+
+<!-- TERMS MODAL -->
+<div class="modal" id="termsModal">
+    <div class="modal-content">
+        <h3>Terms & Conditions</h3>
+
+        <div class="terms-text">
+            <p>Welcome to ANO TARA SERVICES.</p>
+
+            <ul>
+                <li>Your account is your responsibility.</li>
+                <li>The code is for identification only.</li>
+                <li>Do not share your password.</li>
+                <li>Respect the system and assistants.</li>
+                <li>Misuse may result in restriction.</li>
+            </ul>
+
+            <p>Use this system properly and responsibly.</p>
+        </div>
+
+        <button onclick="closeTerms()">Close</button>
+    </div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
